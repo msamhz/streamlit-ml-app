@@ -23,7 +23,7 @@ jobs:
 
     - name: Run autopep8
       run: |
-        autopep8 --in-place --aggressive --aggressive **/*.py
+        find . -name "*.py" | xargs autopep8 --in-place --aggressive --aggressive
 
     - name: Commit and push changes
       run: |
