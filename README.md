@@ -41,7 +41,3 @@ The following features are used for prediction:
 - pandas
 - scikit-learn
 - streamlit
-
-## License
-
-This project is licensed under the MIT License.
