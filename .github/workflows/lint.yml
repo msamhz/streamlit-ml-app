@@ -1,12 +1,13 @@
-name: Lint Code with Pylint
+name: Lint and Test Code
 
 on: [push, pull_request]
 
 jobs:
-  lint:
+  lint_and_test:
     runs-on: ubuntu-latest
     permissions:
       issues: write
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -27,6 +28,7 @@ jobs:
         pylint **/*.py
 
     - name: Run unit tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}
       run: |
         python -m unittest discover tests
-        

@@ -6,6 +6,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.datasets import load_breast_cancer
 from sklearn.ensemble import RandomForestClassifier
+from typing import Tuple, List
 
 selected_features = [
     'worst perimeter', 'mean concave points', 'worst radius',
@@ -13,7 +14,7 @@ selected_features = [
 ]
 
 @st.cache_data
-def load_data():
+def load_data() -> Tuple[pd.DataFrame, List[str]]:
     """
     Load and preprocess the breast cancer dataset.
     """
@@ -23,13 +24,13 @@ def load_data():
     df_data['cancer'] = data.target
     return df_data, data.target_names
 
-def get_min(dataframe):
+def get_min(dataframe: pd.DataFrame) -> dict:
     """
     Get the minimum values for the selected features.
     """
     return dict(dataframe.describe()[selected_features].min())
 
-def get_max(dataframe):
+def get_max(dataframe: pd.DataFrame) -> dict:
     """
     Get the maximum values for the selected features.
     """
