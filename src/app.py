@@ -2,11 +2,11 @@
 Breast Cancer Prediction App using Streamlit and RandomForestClassifier.
 """
 
+from typing import Tuple, List
 import streamlit as st
 import pandas as pd
 from sklearn.datasets import load_breast_cancer
 from sklearn.ensemble import RandomForestClassifier
-from typing import Tuple, List
 
 selected_features = [
     'worst perimeter', 'mean concave points', 'worst radius',
