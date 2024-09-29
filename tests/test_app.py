@@ -4,9 +4,7 @@ Unit tests for the Breast Cancer Prediction App.
 
 import unittest
 import pandas as pd
-import os 
-os.chdir('../')
-from app import load_data, get_min, get_max, selected_features
+from src.app import load_data, get_min, get_max, selected_features
 
 class TestBreastCancerApp(unittest.TestCase):
     """
