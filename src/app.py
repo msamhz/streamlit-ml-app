@@ -18,11 +18,11 @@ def load_data() -> Tuple[pd.DataFrame, List[str]]:
     """
     Load and preprocess the breast cancer dataset.
     """
-    data = load_breast_cancer()  # pylint: disable=no-member
-    df_data = pd.DataFrame(data.data, columns=data.feature_names)  # pylint: disable=no-member
+    data = load_breast_cancer()
+    df_data = pd.DataFrame(data.data, columns=data.feature_names)
     df_data = df_data[selected_features]
-    df_data['cancer'] = data.target  # pylint: disable=no-member
-    return df_data, data.target_names  # pylint: disable=no-member
+    df_data['cancer'] = data.target
+    return df_data, data.target_names
 
 def get_min(dataframe: pd.DataFrame) -> dict:
     """
